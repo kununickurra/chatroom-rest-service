@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cgi.chatroom</groupId>
+    <artifactId>chatroom-rest-service</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>chatroom-rest-service-impl</module>
+        <module>chatroom-rest-service-war</module>
+    </modules>
+    <properties>
+        <java.version>1.7</java.version>
+        <!-- Chat room service URL -->
+        <chatroom-service-url>http://localhost:8080/ws/ChatroomService</chatroom-service-url>
+        <!-- Chat room service specification -->
+        <chatroom-service-spec.version>0.0.1-SNAPSHOT</chatroom-service-spec.version>
+        <!-- Spring -->
+        <spring.version>4.0.2.RELEASE</spring.version>
+        <!-- CXF web services -->
+        <org.apache.cxf.version>2.7.7</org.apache.cxf.version>
+        <!-- Json -->
+        <com.fasterxml.jackson.core.databind.version>2.4.1.1</com.fasterxml.jackson.core.databind.version>
+        <com.fasterxml.jackson.core.version>2.4.1</com.fasterxml.jackson.core.version>		
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.cgi.chatroom</groupId>
+                <artifactId>chatroom-rest-service-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cgi.chatroom</groupId>
+                <artifactId>chatroom-rest-service-war</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cgi.services</groupId>
+                <artifactId>chatroom-service-spec</artifactId>
+                <version>${chatroom-service-spec.version}</version>
+            </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${com.fasterxml.jackson.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${com.fasterxml.jackson.core.databind.version}</version>
+        </dependency>			
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http-jetty</artifactId>
+                <version>${org.apache.cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxws</artifactId>
+                <version>${org.apache.cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-api</artifactId>
+                <version>${org.apache.cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
