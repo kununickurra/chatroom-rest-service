@@ -14,8 +14,8 @@
     </modules>
     <properties>
         <java.version>1.7</java.version>
-        <!-- Chat room service URL -->
-        <chatroom-service-url>http://localhost:8080/ws/ChatroomService</chatroom-service-url>
+        <!-- Default Property file configuration -->
+        <properties.file.location>classpath:properties/development.properties</properties.file.location>
         <!-- Chat room service specification -->
         <chatroom-service-spec.version>0.0.1-SNAPSHOT</chatroom-service-spec.version>
         <!-- Spring -->

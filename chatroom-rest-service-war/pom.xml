@@ -43,7 +43,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>chatroom-rest-service</finalName>
+        <finalName>rest-services</finalName>
 
         <resources>
             <resource>

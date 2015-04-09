@@ -6,6 +6,11 @@
            http://cxf.apache.org/jaxws
            http://cxf.apache.org/schemas/jaxws.xsd">
 
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="${properties.file.location}"/>
+    </bean>
+
+
     <!-- Declare a Jax WS Service client -->
     <jaxws:client
             id="chatroomServiceClient"
