@@ -41,12 +41,15 @@ public class ChatRoomServiceController {
 
         // Prepare message content
         PublishRequestDTO publishRequestDTO = new PublishRequestDTO();
+
+        // Nick name and message content a simply copied into the SOAP xml publish request.
         publishRequestDTO.setSender(message.getSenderNickname());
         publishRequestDTO.setContent(message.getContent());
 
         // Prepare headers
         HeaderDTO headerDTO = new HeaderDTO();
         MessageOriginType messageOriginType = new MessageOriginType();
+        // The send date populated with the current date (converted to XMLGregorianCalendar)
         messageOriginType.setSentDate(dateConverter.toXMLGregorianCalendar(new Date()));
 
         // Allow debug from Browser, force to WebApp input.
@@ -56,7 +59,7 @@ public class ChatRoomServiceController {
             messageOriginType.setUserAgent(userAgent);
         }
         headerDTO.setOrigin(messageOriginType);
-        // Not used
+        // Not used, just hard coded for now...
         headerDTO.setUserID("1");
         try {
             // Call Web service
