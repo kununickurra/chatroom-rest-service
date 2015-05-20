@@ -1,5 +1,8 @@
 package com.cgi.chatroom.rest.dto;
 
+/**
+ * DTO used when publishing a message on the chat room
+ */
 public class PublishMessageRequestDTO {
 
     private String senderNickname;

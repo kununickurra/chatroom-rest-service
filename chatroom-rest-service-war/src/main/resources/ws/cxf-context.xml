@@ -10,12 +10,14 @@
         <property name="locations" value="${properties.file.location}"/>
     </bean>
 
-
     <!-- Declare a Jax WS Service client -->
     <jaxws:client
             id="chatroomServiceClient"
             address="${chatroom-service-url}"
             serviceClass="com.cgi.service.chatroom.v1.ChatroomService">
+        <jaxws:inInterceptors>
+            <bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
+        </jaxws:inInterceptors>
         <jaxws:properties>
             <entry key="schema-validation-enabled" value="true"/>
         </jaxws:properties>

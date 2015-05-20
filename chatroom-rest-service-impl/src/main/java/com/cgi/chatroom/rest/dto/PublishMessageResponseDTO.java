@@ -1,9 +1,12 @@
 package com.cgi.chatroom.rest.dto;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+/**
+ * DTO used to return meta information concerning the message when publishing.
+ */
 public class PublishMessageResponseDTO {
 
     private Long messageId;
